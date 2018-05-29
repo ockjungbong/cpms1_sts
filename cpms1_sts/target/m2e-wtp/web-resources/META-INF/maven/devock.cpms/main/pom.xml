@@ -225,201 +225,118 @@
 
 
 		<!-- db 컨넥션풀 -->
-
 		<dependency>
-
 			<groupId>commons-dbcp</groupId>
-
 			<artifactId>commons-dbcp</artifactId>
-
 			<version>1.2.2</version>
-
 		</dependency>
-
-
 
 		<!-- mybatis : 시작 -->
-
 		<dependency>
-
 			<groupId>org.mybatis</groupId>
-
 			<artifactId>mybatis-spring</artifactId>
-
 			<version>1.3.1</version>
-
 		</dependency>
 
 		<dependency>
-
 			<groupId>org.mybatis</groupId>
-
 			<artifactId>mybatis</artifactId>
-
 			<version>3.4.5</version>
-
 		</dependency>
-
 		<!-- mybatis : 끝 -->
 
-
-
 		<!-- 마리아 디비 -->
-
 		<dependency>
-
 			<groupId>org.mariadb.jdbc</groupId>
-
 			<artifactId>mariadb-java-client</artifactId>
-
 			<version>2.2.1</version>
-
 		</dependency>
-
 		<!-- 마리아 디비 끝 -->
-
+		
+		<!-- 쿼리 로그 -->
+		<dependency>
+		    <groupId>org.lazyluke</groupId>
+		    <artifactId>log4jdbc-remix</artifactId>
+		    <version>0.2.7</version>
+		</dependency>
 
 
 		<!-- gson -->
-
 		<dependency>
-
 			<groupId>com.google.code.gson</groupId>
-
 			<artifactId>gson</artifactId>
-
 			<version>2.5</version>
-
 			<scope>compile</scope>
-
 		</dependency>
-
 		<!-- gson 끝 -->
 
 
 
 		<!-- 일반적인 설정 모음 -->
-
 		<dependency>
-
 			<groupId>commons-configuration</groupId>
-
 			<artifactId>commons-configuration</artifactId>
-
 			<version>1.6</version>
-
 		</dependency>
-
 		<!-- 일반적인 설정 모음 끝 -->
 
 
-
 		<!-- 스프링 메일 설정 -->
-
 		<dependency>
-
 			<groupId>org.springframework</groupId>
-
 			<artifactId>spring-context-support</artifactId>
-
 			<version>${org.springframework-version}</version>
-
 		</dependency>
-
 		<!-- 스프링 메일 설정 끝 -->
 
 
-
 		<!-- Gmail -->
-
 		<dependency>
-
 			<groupId>javax.mail</groupId>
-
 			<artifactId>mail</artifactId>
-
 			<version>1.4</version>
-
 		</dependency>
-
 		<!-- // Gmail -->
 
 	</dependencies>
 
 	<build>
-
 		<plugins>
-
 			<plugin>
-
 				<artifactId>maven-eclipse-plugin</artifactId>
-
 				<version>2.9</version>
-
 				<configuration>
-
 					<additionalProjectnatures>
-
 						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
-
 					</additionalProjectnatures>
-
 					<additionalBuildcommands>
-
 						<buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
-
 					</additionalBuildcommands>
-
 					<downloadSources>true</downloadSources>
-
 					<downloadJavadocs>true</downloadJavadocs>
-
 				</configuration>
-
 			</plugin>
-
 			<plugin>
-
 				<groupId>org.apache.maven.plugins</groupId>
-
 				<artifactId>maven-compiler-plugin</artifactId>
-
 				<version>2.5.1</version>
-
 				<configuration>
-
 					<source>1.6</source>
-
 					<target>1.6</target>
-
 					<compilerArgument>-Xlint:all</compilerArgument>
-
 					<showWarnings>true</showWarnings>
-
 					<showDeprecation>true</showDeprecation>
-
 				</configuration>
-
 			</plugin>
 
 			<plugin>
-
 				<groupId>org.codehaus.mojo</groupId>
-
 				<artifactId>exec-maven-plugin</artifactId>
-
 				<version>1.2.1</version>
-
 				<configuration>
-
 					<mainClass>org.test.int1.Main</mainClass>
-
 				</configuration>
-
 			</plugin>
-
 		</plugins>
-
 	</build>
-
 </project>

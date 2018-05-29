@@ -5,7 +5,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import devock.cpms.logger.LoggerInterceptor;
+import devock.cpms.common.logger.LoggerInterceptor;
 
 @Controller
 public class MainController {
