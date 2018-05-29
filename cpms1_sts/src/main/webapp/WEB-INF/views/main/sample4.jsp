@@ -118,7 +118,7 @@ function fn_formSubmit(){
                     
                     <br/>
                     <form role="form" id="form1" name="form1"  method="post">
-                        <jsp:include page="../common/pagingforSubmit.jsp" />
+                       <!--   <jsp:include page="../common/pagingforSubmit.jsp" />-->
                     
                         <div class="form-group">
                             <div class="checkbox col-lg-3 pull-left">
