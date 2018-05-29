@@ -181,33 +181,21 @@
 		</dependency>
 
 		<dependency>
-
 			<groupId>org.hibernate</groupId>
-
 			<artifactId>hibernate-validator</artifactId>
-
 			<version>4.1.0.Final</version>
-
 		</dependency>
-
 		<!-- Form Validation using Annotations -->
 
 
 
 		<!-- SHA-3 -->
-
 		<dependency>
-
 			<groupId>org.bouncycastle</groupId>
-
 			<artifactId>bcprov-jdk15on</artifactId>
-
 			<version>1.59</version>
-
 		</dependency>
-
 		<!-- SHA-3 end -->
-
 
 
 		<!-- spring db 관련 -->
