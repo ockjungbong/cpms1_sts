@@ -37,7 +37,6 @@ public class LoginController {
     @RequestMapping(value = "memberLoginChk.do")
     public String memberLoginChk(HttpServletRequest request,HttpServletResponse response, LoginVO loginInfo, ModelMap modelMap) throws Exception{
 
-        //UserVO mdo = memberSvc.selectMember4Login(loginInfo);
         UserVO user = memberService.selectMember4Login(loginInfo);
             
         if (user  ==  null) {
