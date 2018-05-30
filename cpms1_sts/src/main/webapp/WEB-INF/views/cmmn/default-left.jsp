@@ -10,7 +10,7 @@
 
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index"><s:message code="common.projectTitle"/></a>
+                <a class="navbar-brand" href="main.do"><s:message code="common.projectTitle"/></a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -51,10 +51,10 @@
 	                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
 	                    </a>
 	                    <ul class="dropdown-menu dropdown-user">
-	                        <li><a href="memberForm"><i class="fa fa-user fa-fw"></i> <c:out value="${sessionScope.usernm}"/></a></li>
-	                        <li><a href="searchMember"><i class="fa fa-users fa-fw"></i> <s:message code="memu.users"/></a></li>
+	                        <li><a href="memberForm.do"><i class="fa fa-user fa-fw"></i> <c:out value="${sessionScope.usernm}"/></a></li>
+	                        <li><a href="searchMember.do"><i class="fa fa-users fa-fw"></i> <s:message code="memu.users"/></a></li>
 	                        <li class="divider"></li>
-	                        <li><a href="memberLogout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+	                        <li><a href="memberLogout.do"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
 	                        </li>
 	                    </ul>
 	                    <!-- /.dropdown-user -->

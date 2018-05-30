@@ -3,6 +3,7 @@
 
 <configuration>
     <typeAliases>
-		
+    	<typeAlias alias="loginVO" type="devock.cpms.member.service.LoginVO"/>
+    	<typeAlias alias="userVO" type="devock.cpms.member.service.UserVO"/>    	
     </typeAliases>
 </configuration>
