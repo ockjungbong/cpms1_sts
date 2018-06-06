@@ -3,6 +3,10 @@
 
 <configuration>
     <typeAliases>
+    	<!-- 공통 서비스 VO -->
+    	<typeAlias alias="searchVO" type="devock.cpms.common.vo.SearchVO"/>   	
+    
+    	<!-- 개별 서비스 VO -->
     	<typeAlias alias="loginVO" type="devock.cpms.member.service.LoginVO"/>
     	<typeAlias alias="userVO" type="devock.cpms.member.service.UserVO"/>    	
     </typeAliases>

@@ -54,6 +54,9 @@ function readImage(input) {
 function fn_formSubmit(){
 	if ( ! chkInputValue("#usernm", "<s:message code="common.name"/>")) return false;
 	
+	var usm = $("#usernm").val();
+	console.log("usm >> " + usm);
+	
 	$("#form1").submit();
 } 
 
@@ -71,10 +74,11 @@ function fn_changePWSave() {
 	}
 	
 	$.ajax({
-		url: "changePWSave",
+		url: "changePWSave.do",
 		type:"post", 
 		data : {userpw:$("#userpw").val()},
 		success: function(result){
+			console.log("result >> " + result);
 			if (result==="OK") {
 				alert("<s:message code="msg.changeComplete"/>");
 			}
@@ -88,7 +92,7 @@ function fn_changePWSave() {
 <body>
 
     <div id="wrapper">
-		<jsp:include page="../cmmn/default-left.jsp" />
+		
 		
         <div id="page-wrapper">
             <div class="row">
@@ -101,7 +105,7 @@ function fn_changePWSave() {
             <!-- /.row -->
             <div class="row">
             	<div class="col-lg-7">
-					<form id="form1" name="form1" role="form" action="userSave" method="post" enctype="multipart/form-data"  >
+					<form id="form1" name="form1" role="form" action="userSave.do" method="post" enctype="multipart/form-data"  >
                    		<div class="row form-group">
                            <div class="col-lg-1"></div>
                            <label class="col-lg-2"><s:message code="common.id"/></label>
@@ -121,7 +125,11 @@ function fn_changePWSave() {
                            <div class="col-lg-1"></div>
                            <div class="col-lg-2"><label><s:message code="common.photo"/></label></div>
                            <div class="col-sm-3">
-                           	<img id="previewImg" style="width:100%; height: 120px; max-width: 100px;" src="fileDownload?downname=<c:out value="${userInfo.photo}"/>">
+                           	<!-- filedown 임시 주석
+                           		<img id="previewImg" style="width:100%; height: 120px; max-width: 100px;" src="fileDownload?downname=<c:out value="${userInfo.photo}"/>">
+                           	
+                           	<img id="previewImg" style="width:100%; height: 120px; max-width: 100px;" src="<c:out value="${userInfo.photo}"/>">
+                           -->
                            </div>
                            <div class="col-lg-5">
 							<input type="file" name="photofile" id="photofile" accept='image/*'/>

@@ -1,12 +1,27 @@
 package devock.cpms.member.service;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
+import devock.cpms.common.validator.Phone;
+
 public class UserVO {
-    private String userno;
-    private String userid;
+    private String userno;    
+   
+    private String userid;  
+    
     private String userpw;
-    private String usernm;
+ 
+    private String userpwCfm;
+    
+	private String usernm;
+    
+    @Phone
+    private String phoneNumber;
+    
     private String photo;
     private String userrole;
     private String ip;
@@ -97,4 +112,31 @@ public class UserVO {
     public void setDeptnm(String deptnm) {
         this.deptnm = deptnm;
     }
+    
+    public String getUserpwCfm() {
+		return userpwCfm;
+	}
+
+	public void setUserpwCfm(String userpwCfm) {
+		this.userpwCfm = userpwCfm;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	@Override
+	public String toString() {
+		return "UserVO [userno=" + userno + ", userid=" + userid + ", userpw=" + userpw + ", userpwCfm=" + userpwCfm
+				+ ", usernm=" + usernm + ", phoneNumber=" + phoneNumber + ", photo=" + photo + ", userrole=" + userrole
+				+ ", ip=" + ip + ", deptno=" + deptno + ", deptnm=" + deptnm + ", photofile=" + photofile + "]";
+	}
+
+
+    
+    
 }

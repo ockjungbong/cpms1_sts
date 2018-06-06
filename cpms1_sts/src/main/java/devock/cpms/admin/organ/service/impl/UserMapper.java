@@ -9,4 +9,8 @@ public interface UserMapper {
 
 	UserVO selectUserOne(String userno) throws Exception;
 
+	void updateUserPassword(UserVO userInfo) throws Exception;
+
+	void updateUserByMe(UserVO userInfo) throws Exception;
+
 }

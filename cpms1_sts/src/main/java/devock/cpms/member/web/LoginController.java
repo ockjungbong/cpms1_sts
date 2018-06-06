@@ -43,6 +43,7 @@ public class LoginController {
             modelMap.addAttribute("msg", "로그인 할 수 없습니다.");
             return "common/message";
         }
+        /*
         
         // 로그인 이력 남기기
         memberService.insertLogIn(user.getUserno());
@@ -53,6 +54,8 @@ public class LoginController {
         session.setAttribute("userrole",user.getUserrole());
         session.setAttribute("userno",  user.getUserno());
         session.setAttribute("usernm",  user.getUsernm());
+        
+        */
         
         if ("Y".equals(loginInfo.getRemember())) {
             set_cookie("sid", loginInfo.getUserid(), response);

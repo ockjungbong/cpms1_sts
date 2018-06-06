@@ -41,11 +41,16 @@
         <beans:property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />  
         <beans:property name="order" value="1" />
     </beans:bean>   
-
     
 
     <!-- 타일즈 레이아웃 설정 -->   
     <beans:bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer" />  
+    
+    <!-- UserVOValidator 빈 등록 직접 등록 방법과 @Component 어노테이션을 위한 방법이 있음
+    <beans:bean id="UserVOValidator" class="devock.cpms.common.validator.UserVoValidator" />  
+    -->
+    
+    
 
 </beans:beans>
 

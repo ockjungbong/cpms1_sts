@@ -44,7 +44,7 @@ function fn_formSubmit(){
 
     <div id="wrapper">
 
-		<jsp:include page="../cmmn/default-left.jsp" />
+		
 		
         <div id="page-wrapper">
             <div class="row">

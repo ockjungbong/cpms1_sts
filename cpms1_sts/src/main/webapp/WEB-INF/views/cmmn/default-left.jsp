@@ -51,7 +51,8 @@
 	                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
 	                    </a>
 	                    <ul class="dropdown-menu dropdown-user">
-	                        <li><a href="memberForm.do"><i class="fa fa-user fa-fw"></i> <c:out value="${sessionScope.usernm}"/></a></li>
+	                        <li><a href="memberForm.do"><i class="fa fa-user fa-fw"></i> 관리자</a></li>
+	                        <!--  <li><a href="memberForm.do"><i class="fa fa-user fa-fw"></i> <c:out value="${sessionScope.usernm}"/></a></li>-->
 	                        <li><a href="searchMember.do"><i class="fa fa-users fa-fw"></i> <s:message code="memu.users"/></a></li>
 	                        <li class="divider"></li>
 	                        <li><a href="memberLogout.do"><i class="fa fa-sign-out fa-fw"></i> Logout</a>

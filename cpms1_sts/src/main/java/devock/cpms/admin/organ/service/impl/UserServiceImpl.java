@@ -13,9 +13,20 @@ public class UserServiceImpl implements UserService{
 	private UserMapper userMapper;
 
 	@Override
-	public UserVO selectUserOne(String userno) throws Exception {
-		// TODO Auto-generated method stub
+	public UserVO selectUserOne(String userno) throws Exception {		
 		return userMapper.selectUserOne(userno);
+	}
+
+	@Override
+	public void updateUserPassword(UserVO userInfo) throws Exception {
+		userMapper.updateUserPassword(userInfo);
+		
+	}
+
+	@Override
+	public void updateUserByMe(UserVO userInfo) throws Exception {
+		userMapper.updateUserByMe(userInfo);
+		
 	}
 
 }

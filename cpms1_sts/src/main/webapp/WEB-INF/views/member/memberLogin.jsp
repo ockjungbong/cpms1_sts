@@ -30,6 +30,21 @@
     <script src="css/sb-admin/sb-admin-2.js"></script>
 	<script src="js/project9.js"></script>    
 <script>
+
+var member = 
+{
+	pageSubmitFn : function(pageName) {		
+		
+		var $frm = $("#form1");
+		
+		$("#pageName").val(pageName);
+		
+		$frm.attr("action", pageName + ".do");
+
+		$frm.submit();
+	}
+}
+
 function fn_formSubmit(){
 	if ( ! chkInputValue("#userid", "<s:message code="common.id"/>")) return false;
 	if ( ! chkInputValue("#userpw", "<s:message code="common.password"/>")) return false;
@@ -46,8 +61,10 @@ function fn_formSubmit(){
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
+                    
                     <div class="panel-heading">
                         <h3 class="panel-title">Please Sign In</h3>
+                       
                     </div>
                     <div class="panel-body">
                         <form role="form" action="memberLoginChk.do" method="post" id="form1" name="form1">
@@ -65,6 +82,7 @@ function fn_formSubmit(){
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <a href="#" class="btn btn-lg btn-success btn-block" onclick="fn_formSubmit()">Login</a>
+                                <a href="#" onclick="javascript:member.pageSubmitFn('memberJoin')">Join Us</a>                 
                             </fieldset>
                         </form>
                     </div>

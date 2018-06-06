@@ -10,6 +10,22 @@
            AND USERNO=#{userno}
     </select> 
     
+    <update id="updateUserPassword" parameterType="userVO">
+        UPDATE COM_USER
+           SET USERPW=SHA2(#{userpw}, 256)
+         WHERE USERNO=#{userno} 
+    </update> 
+    
+    <update id="updateUserByMe" parameterType="userVO">
+        UPDATE COM_USER
+           SET USERNM=#{usernm}
+             <if test="photo!=null and photo!=''"> 
+                 , PHOTO=#{photo}
+             </if>     
+         WHERE DELETEFLAG='N'
+           AND USERNO=#{userno} 
+    </update> 
+    
     
         
 </mapper>
