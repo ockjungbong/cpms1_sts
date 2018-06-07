@@ -37,9 +37,10 @@
 
 function fn_searchDept(){
     $.ajax({
-        url: "popupDept",
+        url: "/popupDept.do",
         type: "post"        
     }).success(function(result){
+    	console.log(1);
                 $("#popupDept").html(result);
         }            
     );
@@ -47,6 +48,7 @@ function fn_searchDept(){
 }
 
 function deptTreeActivate(node) {
+	console.log(2);
     if (node==null || node.data.key==0) return;
     
     $("#deptno").val(node.data.key);
@@ -56,7 +58,7 @@ function deptTreeActivate(node) {
 ////////////////////////////////////////////////
 function fn_searchUser(){
     $.ajax({
-        url: "popupUser",
+        url: "popupUser.do",
         type: "post"        
     }).success(function(result){
                 $("#popupUser").html(result);
@@ -69,7 +71,7 @@ function deptTreeInUserActivate(node) {
     if (node==null || node.data.key==0) return;
     
     $.ajax({
-        url: "popupUsersByDept",
+        url: "/popupUsersByDept.do",
         type:"post", 
         data: { deptno : node.data.key }        
     }).success(function(result){
@@ -86,7 +88,7 @@ function fn_selectUser(userno, usernm) {
 ////////////////////////////////////////////////
 function fn_searchUsers(){
     $.ajax({
-        url: "popupUsers",
+        url: "popupUsers.do",
         type: "post"        
     }).success(function(result){
                 $("#popupUsers").html(result);
@@ -131,7 +133,7 @@ function fn_showCode(id){
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">샘플 1: 조직도/사용자</h1>
+                    <h1 class="page-header">기능 1: 조직도/사용자</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -152,11 +154,7 @@ function fn_showCode(id){
                         </span>
                     </div>
                 </div>
-                <div class="col-lg-1">
-                    <button class="btn btn-default" type="button" onclick="fn_showCode('#popupCode4Dept')" title="코드 보기">
-                        <i class="fa fa-code"></i> 코드 보기
-                    </button>
-                </div>
+                
             </div>
             
             <!-- /.row -->
@@ -175,11 +173,7 @@ function fn_showCode(id){
                         </span>
                     </div>
                 </div>
-                <div class="col-lg-1">
-                    <button class="btn btn-default" type="button" onclick="fn_showCode('#popupCode4User')" title="코드 보기">
-                        <i class="fa fa-code"></i> 코드 보기
-                    </button>
-                </div>                                                  
+                                                        
             </div>
             <!-- /.row -->
             <div class="row">
@@ -197,11 +191,7 @@ function fn_showCode(id){
                         </span>
                     </div>
                 </div>
-                <div class="col-lg-1">
-                    <button class="btn btn-default" type="button" onclick="fn_showCode('#popupCode4Users')" title="코드 보기">
-                        <i class="fa fa-code"></i> 코드 보기
-                    </button>
-                </div>                                                  
+                                                       
             </div>
             <!-- /.row -->
         </div>
@@ -217,210 +207,7 @@ function fn_showCode(id){
     
     <div id="popupUsers" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"></div>
     
-    <div id="popupCode4Dept" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-             <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header"> 
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button> 
-                    <h4 class="modal-title" id="mySmallModalLabel">필요 코드</h4> 
-                </div>             
-                <div class="modal-body">
-                    <!-- /.row -->
-                    <div class="row">
-                        <pre style="height:100px">
-    &lt;link href="js/dynatree/ui.dynatree.css" rel="stylesheet"/&gt; 
-    &lt;script src="js/jquery-2.2.3.min.js"&gt;&lt;/script&gt;
-    &lt;script src="js/jquery-ui.js"&gt;&lt;/script&gt;
-    &lt;script src="js/dynatree/jquery.dynatree.js"&gt;&lt;/script&gt;
-&lt;script&gt;
-function fn_searchDept(){
-    $.ajax({
-        url: "popupDept",
-        type: "post"        
-    }).success(function(result){
-                $("#popupDept").html(result);
-        }            
-    );
-    $("#popupDept").modal("show");
-}
-
-function deptTreeActivate(node) {
-    if (node==null || node.data.key==0) return;
     
-    $("#deptno").val(node.data.key);
-    $("#deptnm").val(node.data.title);
-    $("#popupDept").modal("hide");
-}
-&lt;/script&gt;                        
-                        </pre>  
-                        <pre>
-   &lt;input type="hidden" name="deptno" id="deptno"&gt;
-   &lt;input class="form-control" type="text" name="deptnm" id="deptnm" readonly="readonly"&gt;
-   &lt;span class="input-group-btn"&gt;
-       &lt;button class="btn btn-default" type="button" onclick="fn_searchDept()"&gt;
-           &lt;i class="fa fa-search"&gt;&lt;/i&gt;
-       &lt;/button&gt;
-   &lt;/span&gt;        
-                        </pre>
-                        <pre>
-   &lt;div id="popupDept" style="display: none;" class="modal fade bs-example-modal-sm" role="dialog" 
-    tabindex="-1" aria-labelledby="mySmallModalLabel"&gt;&lt;/div&gt;
-                        </pre>                
-                    </div>
-                    <!-- /.row -->                
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" id="close"><s:message code="common.btnClose"/></button>
-                </div>
-            </div>
-          </div>
-    </div>
-    <div id="popupCode4User" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-             <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header"> 
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button> 
-                    <h4 class="modal-title" id="mySmallModalLabel">필요 코드</h4> 
-                </div>             
-                <div class="modal-body">
-                    <!-- /.row -->
-                    <div class="row">
-                        <pre style="height:100px">
-    &lt;link href="js/dynatree/ui.dynatree.css" rel="stylesheet"/&gt; 
-    &lt;script src="js/jquery-2.2.3.min.js"&gt;&lt;/script&gt;
-    &lt;script src="js/jquery-ui.js"&gt;&lt;/script&gt;
-    &lt;script src="js/dynatree/jquery.dynatree.js"&gt;&lt;/script&gt;                        
-&lt;script&gt;                        
-function fn_searchUser(){
-    $.ajax({
-        url: "popupUser",
-        type: "post"        
-    }).success(function(result){
-                $("#popupUser").html(result);
-        }            
-    );
-    $("#popupUser").modal("show");
-}
-
-function deptTreeInUserActivate(node) {
-    if (node==null || node.data.key==0) return;
-    
-    $.ajax({
-        url: "popupUsersByDept",
-        type:"post", 
-        data: { deptno : node.data.key }        
-    }).success(function(result){
-                $("#userlist").html(result);
-        }            
-    );
-}
-function fn_selectUser(userno, usernm) {
-    $("#userno").val(userno);
-    $("#usernm").val(usernm);
-    $("#popupUser").modal("hide");
-
-}
-&lt;/script&gt;                        
-                        </pre>  
-                        <pre>
-    &lt;input type="hidden" name="userno" id="userno"&gt;
-    &lt;input class="form-control" type="text" name="usernm" id="usernm" readonly="readonly"&gt;
-    &lt;span class="input-group-btn"&gt;
-        &lt;button class="btn btn-default" type="button" onclick="fn_searchUser()"&gt;
-            &lt;i class="fa fa-search"&gt;&lt;/i&gt;
-        &lt;/button&gt;
-    &lt;/span&gt;
-                        </pre>
-                        <pre>
-    &lt;div id="popupUser" class="modal fade" tabindex="-1" role="dialog" 
-    aria-labelledby="myModalLabel" aria-hidden="true"&gt;&lt;/div&gt;
-                        </pre>                
-                    </div>
-                    <!-- /.row -->                
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" id="close"><s:message code="common.btnClose"/></button>
-                </div>
-            </div>
-          </div>
-    </div>
-    <div id="popupCode4Users" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-             <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header"> 
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button> 
-                    <h4 class="modal-title" id="mySmallModalLabel">필요 코드</h4> 
-                </div>             
-                <div class="modal-body">
-                    <!-- /.row -->
-                    <div class="row">
-                        <pre style="height:100px">
-    &lt;link href="js/dynatree/ui.dynatree.css" rel="stylesheet"/&gt; 
-    &lt;script src="js/jquery-2.2.3.min.js"&gt;&lt;/script&gt;
-    &lt;script src="js/jquery-ui.js"&gt;&lt;/script&gt;
-    &lt;script src="js/dynatree/jquery.dynatree.js"&gt;&lt;/script&gt;
-&lt;script&gt;                        
-function fn_searchUsers(){
-    $.ajax({
-        url: "popupUsers",
-        type: "post"        
-    }).success(function(result){
-                $("#popupUsers").html(result);
-                if ($("#usernos").val()!==""){
-                    set_Users($("#usernos").val(), $("#usernms").val()); 
-                }
-        }            
-    );
-    $("#popupUsers").modal("show");
-}
-function deptTreeInUsersActivate(node) {
-    if (node==null || node.data.key==0) return;
-    
-    $.ajax({
-        url: "popupUsers4Users",
-        type:"post", 
-        data: { deptno : node.data.key }        
-    }).success(function(result){
-                $("#userlist4Users").html(result);
-        }            
-    );
-}
-
-function fn_selectUsers(usernos, usernms) {
-    $("#usernos").val(usernos);
-    $("#usernms").val(usernms);
-    $("#popupUsers").modal("hide");
-}
-&lt;/script&gt;                          
-                        </pre>  
-                        <pre>
-    &lt;input type="hidden" name="usernos" id="usernos"&gt;
-    &lt;input class="form-control" type="text" name="usernms" id="usernms" readonly="readonly"&gt;
-    &lt;span class="input-group-btn"&gt;
-        &lt;button class="btn btn-default" type="button" onclick="fn_searchUsers()"&gt;
-            &lt;i class="fa fa-search"&gt;&lt;/i&gt;
-        &lt;/button&gt;
-    &lt;/span&gt;
-                        </pre>
-                        <pre>
-    &lt;div id="popupUsers" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" 
-    aria-labelledby="myLargeModalLabel"&gt;&lt;/div&gt; 
-                        </pre>                
-                    </div>
-                    <!-- /.row -->                
-                </div> 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" id="close"><s:message code="common.btnClose"/></button>
-                </div>
-            </div>
-          </div>
-    </div>    
 </body>
 
 </html>

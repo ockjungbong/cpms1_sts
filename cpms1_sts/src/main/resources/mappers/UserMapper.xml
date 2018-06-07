@@ -26,6 +26,19 @@
            AND USERNO=#{userno} 
     </update> 
     
+    <select id="selectUserListWithDept" parameterType="searchVO" resultType="userVO">
+        SELECT USERNO, USERID, USERNM, USERPW, PHOTO, CU.DEPTNO, DEPTNM
+          FROM COM_USER CU
+         INNER JOIN COM_DEPT CD ON CD.DEPTNO=CU.DEPTNO
+         WHERE CU.DELETEFLAG='N' AND CD.DELETEFLAG='N'
+           <if test="searchExt1!=null and searchExt1!=''">
+               AND CU.DEPTNO=#{searchExt1} 
+           </if>
+           <if test="searchKeyword!=null and searchKeyword!=''">
+               AND CU.USERNM LIKE CONCAT('%', #{searchKeyword}, '%') 
+           </if>
+    </select> 
+    
     
         
 </mapper>

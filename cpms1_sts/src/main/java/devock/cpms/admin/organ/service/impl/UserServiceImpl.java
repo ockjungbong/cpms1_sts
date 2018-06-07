@@ -1,9 +1,12 @@
 package devock.cpms.admin.organ.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import devock.cpms.admin.organ.service.UserService;
+import devock.cpms.common.vo.SearchVO;
 import devock.cpms.member.service.UserVO;
 
 @Service("userService")
@@ -27,6 +30,11 @@ public class UserServiceImpl implements UserService{
 	public void updateUserByMe(UserVO userInfo) throws Exception {
 		userMapper.updateUserByMe(userInfo);
 		
+	}
+
+	@Override
+	public List<?> selectUserListWithDept(SearchVO searchVO) throws Exception {
+		return userMapper.selectUserListWithDept(searchVO);
 	}
 
 }

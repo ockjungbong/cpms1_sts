@@ -1,10 +1,13 @@
 package devock.cpms.common.util;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import devock.cpms.common.logger.AdminInterceptor;
 import devock.cpms.common.vo.TreeVO;
@@ -38,7 +41,7 @@ public class TreeMaker {
                  }
              }     
          }
-/*
+
         ObjectMapper mapper = new ObjectMapper();
         String str = "";
         try {
@@ -46,7 +49,7 @@ public class TreeMaker {
         } catch (IOException ex) {
             LOGGER.error("TreeMaker");
         }
-        */
-        return null;
+       
+        return str;
     }
 }
