@@ -45,11 +45,17 @@ var member =
 	}
 }
 
-function fn_formSubmit(){
+function fn_formSubmit(pageName){
 	if ( ! chkInputValue("#userid", "<s:message code="common.id"/>")) return false;
 	if ( ! chkInputValue("#userpw", "<s:message code="common.password"/>")) return false;
 	
-	$("#form1").submit();
+	var $frm = $("#form1");
+	
+	$("#pageName").val(pageName);
+	
+	$frm.attr("action", pageName + ".do");
+
+	$frm.submit();
 }
 </script>
 
@@ -81,8 +87,8 @@ function fn_formSubmit(){
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <a href="#" class="btn btn-lg btn-success btn-block" onclick="fn_formSubmit()">Login</a>
-                                <a href="#" onclick="javascript:member.pageSubmitFn('memberJoin')">Join Us</a>                 
+                                <a href="#" class="btn btn-lg btn-success btn-block" onclick="fn_formSubmit('main')">Login</a>
+                                <!--  <a href="#" onclick="javascript:member.pageSubmitFn('memberJoin')">Join Us</a>    -->             
                             </fieldset>
                         </form>
                     </div>

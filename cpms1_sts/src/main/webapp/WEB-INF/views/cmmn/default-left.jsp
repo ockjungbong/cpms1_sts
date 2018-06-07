@@ -89,33 +89,33 @@
 	                                	}
 	                                </script>                            <!-- /input-group -->
                         </li>
+                        <!--
                         <li>
                             <a href="boardList"><i class="fa fa-files-o fa-fw"></i> <s:message code="board.boardName"/></a>
                         </li>
+                        -->
                         <li>
-                            <a href="#"><i class="fa fa-music fa-fw"></i> 샘플<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-music fa-fw"></i> 기능 샘플<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
                                 <li>
-                                    <a href="sample1">샘플 1: 조직도/사용자</a>
+                                    <a href="sample1.do">기능 1: 조직도/사용자</a>
                                 </li>
                                 <li>
-		                            <a href="sample2">샘플 2: 날짜 선택 </a>
+		                            <a href="sample2.do">기능 2: 날짜 선택 </a>
                                 </li>
                                 <li>
-		                            <a href="sample3">샘플 3: 챠트</a>
+		                            <a href="sample3.do">기능 3: 챠트</a>
                                 </li>
                                 <li>
-		                            <a href="sample4">샘플 4: List & Excel</a>
+		                            <a href="sample4.do">기능 4: List & Excel</a>
                                 </li>
                                 <li>
-		                            <a href="crudList">샘플 5: CRUD</a>
+		                            <a href="crudList.do">기능 5: CRUD</a>
                                 </li>
-                                <li>
-		                            <a href="chkList">샘플 6: Multy Checkbox</a>
-                                </li>
+                                
 	                        </ul>                            
                         </li>
-                       <!--   <c:if test='${sessionScope.userrole == "A"}'>  -->
+                          <c:if test='${sessionScope.userrole == "A"}'>  
 	                        <li>
 	                            <a href="#"> <s:message code="memu.admin"/></a>
 	                        </li>
@@ -136,7 +136,7 @@
                              <li>
                                  <a href="adCodeList"><i class="fa fa-gear fa-fw"></i> <s:message code="memu.code"/></a>
                              </li>
-	                	<!--  </c:if>	 -->       
+	                	  </c:if>	   
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

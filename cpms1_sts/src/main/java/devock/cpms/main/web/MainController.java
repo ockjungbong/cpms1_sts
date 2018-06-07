@@ -11,10 +11,6 @@ import devock.cpms.common.logger.LoggerInterceptor;
 public class MainController {
 	
 	protected Log log = LogFactory.getLog(LoggerInterceptor.class);
-
-	
-
-	
 	
 	@RequestMapping(value = "main.do")
 	public String main() throws Exception {	

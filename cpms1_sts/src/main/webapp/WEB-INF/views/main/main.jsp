@@ -76,6 +76,8 @@ function ev_nextSlide() {
 <body>
 
     <div id="wrapper">
+    
+    	 <!--<jsp:include page="../cmmn/default-left.jsp" />-->
 
         <div id="page-wrapper">
             <div id="calenDiv" class="row">
@@ -169,17 +171,7 @@ function ev_nextSlide() {
                                                         <!--  <img src="fileDownload?downname=<c:out value="${listtime.photo}"/>" title="<c:out value="${listtime.rewriter}"/>" class="chat-img pull-left img-circle"/>  -->
                                                     </c:otherwise>
                                                     </c:choose>                                                
-                                                <div class="chat-body clearfix">
-                                                    <div class="header">
-                                                        <strong class="primary-font"><c:out value="${listtime.rewriter}"/></strong>
-                                                        <small class="pull-right text-muted">
-                                                            <i class="fa fa-clock-o fa-fw"></i> <c:out value="${listtime.redate}"/>
-                                                        </small>
-                                                    </div>
-                                                    <p>
-                                                        <a href="boardRead?brdno=<c:out value="${listtime.brdno}"/>">게시물[<c:out value="${listtime.rememo}"/>]에 댓글이 추가되었습니다.</a>    
-                                                    </p>
-                                                </div>
+                                                
                                             </li>                                    
                                         </c:when>
                                         <c:otherwise>
@@ -194,16 +186,7 @@ function ev_nextSlide() {
                                                    <!--   <img src="fileDownload?downname=<c:out value="${listtime.photo}"/>" title="<c:out value="${listtime.rewriter}"/>" class="chat-img pull-right img-circle"/>  -->
                                                 </c:otherwise>
                                                 </c:choose>
-                                                <div class="chat-body clearfix">
-                                                    <div class="header">
-                                                        <small class=" text-muted">
-                                                            <i class="fa fa-clock-o fa-fw"></i> <c:out value="${listtime.redate}"/></small>
-                                                        <strong class="pull-right primary-font"><c:out value="${listtime.rewriter}"/></strong>
-                                                    </div>
-                                                    <p>
-                                                        <a href="boardRead?brdno=<c:out value="${listtime.brdno}"/>">게시물[<c:out value="${listtime.rememo}"/>]에 댓글이 추가되었습니다.</a>    
-                                                    </p>
-                                                </div>
+                                                
                                             </li>                                            
                                         </c:otherwise>
                                     </c:choose>

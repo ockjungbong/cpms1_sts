@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>demo</title>
+    <title>CPMS9</title>
     <link href="css/sb-admin/bootstrap.min.css" rel="stylesheet">
     <link href="css/sb-admin/metisMenu.min.css" rel="stylesheet">
     <link href="css/sb-admin/sb-admin-2.css" rel="stylesheet">
