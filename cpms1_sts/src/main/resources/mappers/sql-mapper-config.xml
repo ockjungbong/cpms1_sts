@@ -5,7 +5,8 @@
     <typeAliases>
     	<!-- 공통 서비스 VO -->
     	<typeAlias alias="searchVO" type="devock.cpms.common.vo.SearchVO"/>   
-    	<typeAlias alias="treeVO" type="devock.cpms.common.vo.TreeVO"/>   
+    	<typeAlias alias="treeVO" type="devock.cpms.common.vo.TreeVO"/>
+    	<typeAlias alias="countVO" type="devock.cpms.common.vo.CountVO"/>      
     		
     
     	<!-- 개별 서비스 VO -->
