@@ -37,10 +37,17 @@ window.onload =function() {
 }	  
 
 function fn_formSubmit(){
+	
+	var title = $("#brdtitle").val();
+	var memo = $("#brdmemo").val();
+	
+	console.log("title >> " + title);
+	console.log("memo >> " + memo);
+		
 	CKEDITOR.instances["brdmemo"].updateElement();
 	
-	if ( ! chkInputValue("#brdtitle", "<s:message code="board.title"/>")) return false;
-	if ( ! chkInputValue("#brdmemo", "<s:message code="board.contents"/>")) return false;
+	//if ( ! chkInputValue("#brdtitle", "<s:message code="board.title"/>")) return false;
+	//if ( ! chkInputValue("#brdmemo", "<s:message code="board.contents"/>")) return false;
 	
 	$("#form1").submit();
 } 
@@ -64,7 +71,7 @@ function fn_formSubmit(){
             
             <!-- /.row -->
             <div class="row">
-            	<form id="form1" name="form1" role="form" action="boardSave" method="post" enctype="multipart/form-data" onsubmit="return fn_formSubmit();" >
+            	<form id="form1" name="form1" role="form" action="boardSave.do" method="post" enctype="multipart/form-data" onsubmit="return fn_formSubmit();" >
 					<div class="panel panel-default">
 	                    <div class="panel-body">
 	                    	<div class="row form-group">

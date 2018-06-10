@@ -12,12 +12,16 @@
     	
     	<typeAlias alias="boardVO" type="devock.cpms.board.service.BoardVO"/>      
     	
-    	<typeAlias alias="boardGroupVO" type="devock.cpms.admin.board.BoardGroupVO"/>      
+    	<typeAlias alias="boardGroupVO" type="devock.cpms.admin.board.service.BoardGroupVO"/>      
     	    	 
     	<typeAlias alias="boardSearchVO" type="devock.cpms.board.service.BoardSearchVO"/>      
     	
     	<typeAlias alias="loginVO" type="devock.cpms.member.service.LoginVO"/>
     	
-    	<typeAlias alias="userVO" type="devock.cpms.member.service.UserVO"/>    	
+    	<typeAlias alias="userVO" type="devock.cpms.member.service.UserVO"/>   
+    	
+    	<typeAlias alias="field3VO" type="devock.cpms.common.vo.Field3VO"/>  
+    	
+    	<typeAlias alias="fileVO" type="devock.cpms.common.vo.FileVO"/>  
     </typeAliases>
 </configuration>

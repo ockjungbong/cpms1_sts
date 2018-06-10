@@ -160,5 +160,15 @@ public class BoardVO {
     public void setExtfield1(String extfield1) {
         this.extfield1 = extfield1;
     }
+
+	@Override
+	public String toString() {
+		return "BoardVO [bgno=" + bgno + ", bgname=" + bgname + ", brdno=" + brdno + ", brdtitle=" + brdtitle
+				+ ", brdwriter=" + brdwriter + ", brdmemo=" + brdmemo + ", brddate=" + brddate + ", brdhit=" + brdhit
+				+ ", brddeleteflag=" + brddeleteflag + ", filecnt=" + filecnt + ", replycnt=" + replycnt + ", userno="
+				+ userno + ", brdnotice=" + brdnotice + ", brdlike=" + brdlike + ", brdlikechk=" + brdlikechk
+				+ ", extfield1=" + extfield1 + ", uploadfile=" + uploadfile + "]";
+	}
+    
     
 }

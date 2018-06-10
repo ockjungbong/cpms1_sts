@@ -1,4 +1,4 @@
-package devock.cpms.admin.board;
+package devock.cpms.admin.board.service;
 
 public class BoardGroupVO {
 

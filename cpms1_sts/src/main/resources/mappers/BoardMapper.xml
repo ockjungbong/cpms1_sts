@@ -22,6 +22,7 @@
           <include refid="includeBoard"/>  
     </select> 
     
+   
     <select id="selectBoardList" resultType="boardVO" parameterType="boardSearchVO">
         SELECT BRDNO, BRDTITLE, DATE_FORMAT(BRDDATE,'%Y-%m-%d') BRDDATE, BRDLIKE
              , TB.USERNO, USERNM BRDWRITER, BGNAME, TB.BGNO
@@ -59,6 +60,49 @@
         </if>  
          ORDER BY BRDNO DESC 
          LIMIT 3
+    </select> 
+    
+     <select id="selectBoardOne" parameterType="field3VO" resultType="boardVO">
+        SELECT BGNO, BRDNO, BRDTITLE, USERNM BRDWRITER, BRDMEMO, BRDNOTICE, BRDLIKE
+             , DATE_FORMAT(BRDDATE,'%Y-%m-%d') BRDDATE, TB.USERNO
+             , (SELECT COUNT(*) FROM TBL_BOARDREAD WHERE BRDNO=TB.BRDNO) BRDHIT
+             , (SELECT 1 FROM TBL_BOARDLIKE WHERE BRDNO=TB.BRDNO AND USERNO=#{field2}) BRDLIKECHK
+          FROM TBL_BOARD TB
+         INNER JOIN COM_USER CU ON TB.USERNO=CU.USERNO
+         WHERE BRDDELETEFLAG='N'
+           AND BRDNO=#{field1}
+    </select> 
+    
+    <select id="selectBoardAuthChk" parameterType="boardVO" resultType="String">
+        SELECT BRDNO
+          FROM TBL_BOARD
+         WHERE BRDDELETEFLAG='N'
+           AND BRDNO=#{brdno} AND USERNO=#{userno}
+    </select> 
+    
+    <insert id="insertBoard" parameterType="boardVO" >
+        <selectKey resultType="String" keyProperty="brdno" order="BEFORE">
+            SELECT IFNULL(MAX(BRDNO),0)+1 FROM TBL_BOARD
+        </selectKey>
+    
+        INSERT INTO TBL_BOARD(BGNO, BRDNO, BRDTITLE, USERNO, BRDMEMO, BRDNOTICE, BRDDATE, BRDDELETEFLAG, LASTDATE, LASTUSERNO)
+        VALUES (#{bgno}, #{brdno}, #{brdtitle}, #{userno}, #{brdmemo}, #{brdnotice}, NOW(), 'N', NOW(), #{userno} )
+    </insert>
+    
+    <update id="updateBoardRead" parameterType="field3VO"> 
+        INSERT INTO TBL_BOARDREAD(BRDNO, USERNO, READDATE)
+                 VALUES (#{field1}, #{field2}, NOW())
+                     ON DUPLICATE KEY UPDATE READDATE=NOW();
+    </update> 
+    
+    
+    <!-- ========================= File ============================== -->
+    
+    <select id="selectBoardFileList" resultType="fileVO" parameterType="String">
+        SELECT FILENO, FILENAME, REALNAME, FILESIZE
+          FROM TBL_BOARDFILE
+         WHERE BRDNO=#{brdno}
+         ORDER BY FILENO DESC 
     </select> 
 </mapper>
 

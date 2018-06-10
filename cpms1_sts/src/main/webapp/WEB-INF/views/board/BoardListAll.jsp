@@ -57,7 +57,7 @@ function showBoardList(ev){
 	if (node.childList) return;
 	
 	$.ajax({
-		url: "boardListByAjax",
+		url: "boardListByAjax.do",
 		type:"post", 
 		dataType: "json",
 		success: function(result){
@@ -78,7 +78,7 @@ $(function(){
 });
 
 function TreenodeActivate(node) {
-	location.href = "boardList?bgno=" + node.data.key;
+	location.href = "boardList.do?bgno=" + node.data.key;
 }
 
 </script>

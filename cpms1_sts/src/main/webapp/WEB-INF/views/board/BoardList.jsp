@@ -56,7 +56,7 @@ function showBoardList(ev){
 	if (node.childList) return;
 	
 	$.ajax({
-		url: "boardListByAjax",
+		url: "boardListByAjax.do",
 		type:"post", 
 		dataType: "json",
 		success: function(result){
@@ -77,7 +77,7 @@ $(function(){
 });
 
 function TreenodeActivate(node) {
-	location.href = "boardList?bgno=" + node.data.key;
+	location.href = "boardList.do?bgno=" + node.data.key;
 }
 
 </script>
@@ -110,7 +110,7 @@ function TreenodeActivate(node) {
 	                </div>
                 
 					<c:if test="${bgInfo.bgreadonly=='N' || sessionScope.userrole=='A'}">
-			            <button type="button" class="btn btn-default pull-right" onclick="fn_moveToURL('boardForm?bgno=<c:out value="${searchVO.bgno}"/>')">
+			            <button type="button" class="btn btn-default pull-right" onclick="fn_moveToURL('boardForm.do?bgno=<c:out value="${searchVO.bgno}"/>')">
 			            <i class="fa fa-edit fa-fw"></i> <s:message code="board.new"/></button>      
 					</c:if>
 				</div>
