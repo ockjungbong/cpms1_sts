@@ -89,11 +89,11 @@
 	                                	}
 	                                </script>                            <!-- /input-group -->
                         </li>
-                        <!--
+                        
                         <li>
-                            <a href="boardList"><i class="fa fa-files-o fa-fw"></i> <s:message code="board.boardName"/></a>
+                            <a href="boardList.do"><i class="fa fa-files-o fa-fw"></i> <s:message code="board.boardName"/></a>
                         </li>
-                        -->
+                       
                         <li>
                             <a href="#"><i class="fa fa-music fa-fw"></i> 기능 샘플<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">

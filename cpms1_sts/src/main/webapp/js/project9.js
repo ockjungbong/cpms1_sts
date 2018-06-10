@@ -15,6 +15,10 @@ function fn_moveToURL(url, msg){
 }
 
 function fn_moveToURLbyForm(formid, url, msg){
+	console.log("formid >> " + formid);
+	console.log("url >> " + url);
+	console.log("msg >> " + msg);
+	
 	if (msg) {
 		if (!confirm( msg + " 하시겠습니까??")) return;
 	}

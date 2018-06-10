@@ -59,7 +59,7 @@ function fn_formSubmit(){
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
-                     <button type="button" class="btn btn-default pull-right" onclick="fn_moveToURLbyForm('form1', 'sample4Excel', '엑셀 다운로드를 ')">
+                     <button type="button" class="btn btn-default pull-right" onclick="fn_moveToURLbyForm('form1', 'sample4Excel.do', '엑셀 다운로드를 ')">
                      <i class="fa fa-file-excel-o fa-fw"></i> <s:message code="common.excel"/></button>      
                 </div>
             </div>

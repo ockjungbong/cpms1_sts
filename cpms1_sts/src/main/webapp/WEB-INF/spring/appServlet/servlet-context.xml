@@ -28,14 +28,13 @@
     
     <!-- 인터셉터 설정 -->
     <interceptors>
-    <!--  
+    
         <interceptor>
             <mapping path="/**" />
             <exclude-mapping path="/js/**"/> 
             <exclude-mapping path="/css/**"/>
             <beans:bean class="devock.cpms.common.logger.LoggerInterceptor"></beans:bean>
-        </interceptor>
-    -->
+        </interceptor>   
         
         <interceptor>
             <mapping path="/**" />

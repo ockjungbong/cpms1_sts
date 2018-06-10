@@ -77,8 +77,6 @@ function ev_nextSlide() {
 
     <div id="wrapper">
     
-    	 <!--<jsp:include page="../cmmn/default-left.jsp" />-->
-
         <div id="page-wrapper">
             <div id="calenDiv" class="row">
                 <jsp:include page="mainCalen.jsp" />
@@ -174,6 +172,7 @@ function ev_nextSlide() {
                                                 
                                             </li>                                    
                                         </c:when>
+                                        <!--  
                                         <c:otherwise>
                                             <li class="right clearfix">
                                                 <c:choose>
@@ -183,12 +182,13 @@ function ev_nextSlide() {
                                                     </span>
                                                 </c:when>
                                                 <c:otherwise>
-                                                   <!--   <img src="fileDownload?downname=<c:out value="${listtime.photo}"/>" title="<c:out value="${listtime.rewriter}"/>" class="chat-img pull-right img-circle"/>  -->
+                                                    <img src="fileDownload?downname=<c:out value="${listtime.photo}"/>" title="<c:out value="${listtime.rewriter}"/>" class="chat-img pull-right img-circle"/> 
                                                 </c:otherwise>
                                                 </c:choose>
                                                 
                                             </li>                                            
                                         </c:otherwise>
+                                        -->
                                     </c:choose>
                                 </c:forEach>
                             </ul>    
