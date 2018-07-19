@@ -47,10 +47,9 @@ public class BoardController {
     @RequestMapping(value = "/boardList.do")
     public String boardList(HttpServletRequest request, BoardSearchVO searchVO, ModelMap modelMap) throws Exception {
     	
-    	//System.out.println("boardList Start");
-    	
-        String globalKeyword = request.getParameter("globalKeyword");  // it's search from left side bar
+        String globalKeyword = request.getParameter("globalKeyword");  // globalKeyword input box
         
+        // globalKeyword 값이 비어있지 않다면 searchVO에 셋팅
         if (globalKeyword!=null & !"".equals(globalKeyword)) {
             searchVO.setSearchKeyword(globalKeyword);
         }        
@@ -176,6 +175,30 @@ public class BoardController {
         return "board/BoardRead";
     }
     
+    
+    /**
+     * 글 삭제.
+     */
+    @RequestMapping(value = "/boardDelete.do")
+    public String boardDelete(HttpServletRequest request) throws Exception {
+        String brdno = request.getParameter("brdno");
+        String bgno = request.getParameter("bgno");
+        String userno = request.getSession().getAttribute("userno").toString();
+
+        BoardVO boardInfo = new BoardVO();        // check auth for delete
+        boardInfo.setBrdno(brdno);
+        boardInfo.setUserno(userno);
+        String chk = boardService.selectBoardAuthChk(boardInfo);
+        
+        if (chk == null) {
+            return "common/noAuth";
+        }
+        
+        boardService.deleteBoardOne(brdno);
+        
+        return "redirect:/boardList.do?bgno=" + bgno;
+    }
+    
     /**
      * 게시판 트리. Ajax용.     
      */
@@ -194,5 +217,7 @@ public class BoardController {
 	    }
 	        
     }
+    
+    
 
 }

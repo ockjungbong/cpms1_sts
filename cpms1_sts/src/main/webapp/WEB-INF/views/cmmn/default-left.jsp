@@ -90,9 +90,7 @@
 	                                </script>                            <!-- /input-group -->
                         </li>
                         
-                        <li>
-                            <a href="boardList.do"><i class="fa fa-files-o fa-fw"></i> <s:message code="board.boardName"/></a>
-                        </li>
+                       
                        
                         <li>
                             <a href="#"><i class="fa fa-music fa-fw"></i> 기능 샘플<span class="fa arrow"></span></a>
@@ -115,6 +113,11 @@
                                 
 	                        </ul>                            
                         </li>
+                        
+                         <li>
+                            <a href="boardList.do"><i class="fa fa-files-o fa-fw"></i> <s:message code="board.boardName"/></a>
+                        </li>
+                        
                           <c:if test='${sessionScope.userrole == "A"}'>  
 	                        <li>
 	                            <a href="#"> <s:message code="memu.admin"/></a>

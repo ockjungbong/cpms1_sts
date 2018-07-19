@@ -65,4 +65,9 @@ public class BoardServiceImpl implements BoardService{
 		
 	}
 
+	@Override
+	public void deleteBoardOne(String brdno) throws Exception {
+		boardMapper.deleteBoardOne(brdno);		
+	}
+
 }

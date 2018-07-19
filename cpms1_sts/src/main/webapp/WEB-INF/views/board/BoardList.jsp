@@ -101,6 +101,7 @@ function TreenodeActivate(node) {
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
+                <!-- boardlistBtn 클릭시 트리구조의 div가 나타난다. -->
 	                <button id="boardlistBtn" type="button" class="btn btn-default" onclick="showBoardList()"><i class="fa  fa-files-o fa-fw"></i> <c:out value="${bgInfo.bgname}"/></button>      
 	                <div id="boardlistDiv" style="width: 250px; height:300px; display: none;" class="popover fade bottom in" role="tooltip">
 	                	<div style="left:15%;" class="arrow"></div>

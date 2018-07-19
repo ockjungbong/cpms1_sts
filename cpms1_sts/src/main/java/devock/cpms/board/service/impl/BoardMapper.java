@@ -32,4 +32,6 @@ public interface BoardMapper {
 	void insertBoard(BoardVO boardInfo, List<FileVO> filelist, String[] fileno) throws Exception;
 
 	void updateBoardRead(Field3VO f3) throws Exception;
+
+	void deleteBoardOne(String brdno) throws Exception;
 }
